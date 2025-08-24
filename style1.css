@@ -1,0 +1,382 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+body {
+  background-color: #0a0a1a;
+  color: #e5e5e5;
+}
+
+/* Sections */
+.section {
+  padding: 6rem 1.5rem;
+  text-align: center;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+.logo {
+  width: 8rem;
+  height: 8rem;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #8b5cf6, #0ea5e9);
+  border-radius: 1rem;
+  animation: pulse-glow 2s infinite;
+}
+h1 {
+  font-size: 5rem;
+  background: linear-gradient(135deg, #8b5cf6, #0ea5e9);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.card {
+  background: rgba(15, 15, 30, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(139,92,246,0.5);
+}
+.card .icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #8b5cf6, #0ea5e9);
+  border-radius: 0.75rem;
+}
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Buttons */
+.cta-buttons, .contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.btn-primary, .btn-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #8b5cf6, #0ea5e9);
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover, .btn-contact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(139,92,246,0.5);
+}
+.btn-outline, .btn-contact-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  border: 2px solid #8b5cf6;
+  color: #8b5cf6;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-outline:hover, .btn-contact-outline:hover {
+  background: rgba(139,92,246,0.1);
+  transform: translateY(-2px);
+}
+
+/* Social Buttons */
+.social-links {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.social-btn {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1f1f2f;
+  border: 1px solid #2c2c3b;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.social-btn i {
+  color: #fff;
+  z-index: 10;
+}
+.social-btn.instagram:hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+  opacity: 0.8;
+}
+.social-btn.messenger:hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  opacity: 0.8;
+}
+.social-btn:hover i {
+  position: relative;
+  z-index: 20;
+  color: #fff;
+}
+
+/* Particles */
+.particles .particle {
+  position: absolute;
+  border-radius: 50%;
+  background: #8b5cf6;
+  animation: float 3s ease-in-out infinite;
+}
+.p1 { top: 20%; left: 10%; width: 8px; height: 8px; }
+.p2 { top: 40%; right: 15%; width: 6px; height: 6px; animation-delay: 1s; }
+.p3 { bottom: 30%; left: 25%; width: 10px; height: 10px; animation-delay: 2s; }
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(139,92,246,0.3); }
+  50% { box-shadow: 0 0 40px rgba(139,92,246,0.6); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+/* From Uiverse.io by adamgiebl */ 
+/* Inspired by twitter.com/marina_uiux */
+.button1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  font-size: 17px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgb(56, 56, 56) 0%, rgb(36, 36, 36) 66%, rgb(41, 41, 41) 100%);
+  color: rgb(218, 218, 218);
+  border: none;
+  padding: 2px;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.button span {
+  border-radius: 10px;
+  padding: 0.8em 1.3em;
+  padding-right: 1.2em;
+  text-shadow: 0px 0px 20px #4b4b4b;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  transition: all 0.3s;
+  background-color: rgb(29, 29, 29);
+  background-image: radial-gradient(at 95% 89%, rgb(15, 15, 15) 0px, transparent 50%), radial-gradient(at 0% 100%, rgb(17, 17, 17) 0px, transparent 50%), radial-gradient(at 0% 0%, rgb(29, 29, 29) 0px, transparent 50%);
+}
+
+.button:hover span {
+  background-color: rgb(26, 25, 25);
+}
+
+.button-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-conic-gradient(rgb(48, 47, 47) 0.0000001%, rgb(51, 51, 51) 0.000104%) 60% 60%/600% 600%;
+  filter: opacity(10%) contrast(105%);
+  -webkit-filter: opacity(10%) contrast(105%);
+}
+
+.button svg {
+  width: 15px;
+  height: 15px;
+}
+/* From Uiverse.io by vinodjangid07 */ 
+.Btn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  /* overflow: hidden; */
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+  transition: all .3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+}
+
+.BG {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  z-index: -1;
+  border-radius: 9px;
+  pointer-events: none;
+  transition: all .3s;
+}
+
+.Btn:hover .BG {
+  transform: rotate(35deg);
+  transform-origin: bottom;
+}
+
+.Btn:hover .svgContainer {
+  background-color: rgba(156, 156, 156, 0.466);
+}
+/* From Uiverse.io by Vampicerdito */ 
+.LinkedinBtn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.LinkedinBtn .svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  letter-spacing: 1px; /* Adjusted letter spacing */
+  border-radius: 10px;
+  transition: all 0.3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+}
+
+.LinkedinBtn .BG {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #0165e1;
+  z-index: -1;
+  border-radius: 9px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.LinkedinBtn:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Added box shadow effect */
+}
+
+.LinkedinBtn:hover .BG {
+  transform: rotate(35deg);
+  transform-origin: bottom;
+}
+
+.LinkedinBtn:hover .svgContainer {
+  background-color: rgba(156, 156, 156, 0.466);
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body{
+    margin: 10px;
+}
